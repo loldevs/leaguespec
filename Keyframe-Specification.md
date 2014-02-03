@@ -82,12 +82,12 @@ offset: 0x97; length: 0x10
 ## Unknown data
 offset: 0xA7; length: 0x2C
 ```
-00 A6 94 57
-00 XX XX XX  XX XX XX XX
-XX XX XX XX  XX XX XX 0E
+00 A6 94 XX
+XX XX XX XX  XX XX XX XX
+XX XX XX XX  XX XX XX XX
 00 60 96 XX  XX XX XX XX
-XX XX XX XX  XX 83 00 12
-02 00 00 29  19 00 00 40        // entity ID      
+XX XX XX XX  XX 83 XX 12
+02 00 00 29  EN TI TY ID
 ```
 ## Rune Page
 offset: 0xE3; length: 0x78
@@ -278,6 +278,6 @@ B0 79 09 43  00 00 80 BF  B3 00 01 EF  00 01 93 00
 ```
 ### Footer
 ```
-19 00 00 40         // ENTITY ID
+EN TI TY ID
 00
 ```
