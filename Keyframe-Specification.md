@@ -83,7 +83,7 @@ offset: 0x97; length: 0x10
 offset: 0xA7; length: 0x2C
 ```
 00 A6 94 XX
-!! XX XX XX  XX XX XX XX        // the flag marked as !! over ever equals 0 or 1 
+!! XX XX XX  XX XX XX XX        // the flag marked as !! only ever equals 0 or 1 
 XX XX XX XX  XX XX XX XX
 00 60 96 XX  XX XX XX XX
 XX XX XX XX  !! 83 !! 12        // first flag: 0 or 2; second: 0 or 1
