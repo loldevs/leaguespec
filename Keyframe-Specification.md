@@ -47,6 +47,7 @@ XX FF XX 00
 ```
 ## Summoner Name
 bytes after the null are meaningless
+
 offset: 0x17; length: 0x10
 Example:
 ```
@@ -165,12 +166,14 @@ XX                      // number of points in mastery (max 4)
 Note: not even sure this is what this actually is
 ### Header
 Second byte changes.
+
 offset: 0x2F2, length: 0x09
 ```
 1E XX B3 00 65 FE 00 0C 01
 ```
 ### Item Entries
 There are 9 item entries (future proofing?)
+
 The first 7:
 ```
 XX XX 00 00             // Item ID
@@ -207,6 +210,7 @@ Example:
 ```
 ### Unknown data
 0x130 bytes long
+
 Example:
 ```
 A3 00 28 01  00 00 45 00  28 01 00 00  06 00 00 00
@@ -243,7 +247,9 @@ XX = points in ability (0 to 5)
 ```
 ### String data
 Variable length
+
 Not sure why these specific strings are here
+
 Example: 
 ```
 17 00 2C 01
@@ -264,6 +270,7 @@ F3 00 0A 00 2F 01
 ```
 ### Unknown data
 Variable length
+
 Example:
 ```
 B3  00 09 84 00  40 00 FE 4C  40 00 00 80
