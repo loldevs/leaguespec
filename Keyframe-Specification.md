@@ -26,8 +26,8 @@
    - Name string (0x1C)
    - Unknown data (0x24)
    - Interesting bytes (0x05)
-   - Items (0x48)
-     - Item header (0x09)
+   - Items (0x46)
+     - Item header (0x07)
      - 9 item entries (0x3F)
    - Padding (0x24)
  - Unknown data
@@ -301,5 +301,79 @@ BF  B3 00 01 EF  00 01 93 00  07 FE 00 00
 ```
 
 # Turret Segment
-Note: fountain lazers seem to be considered as turrets aswell
+Note: fountain lasers seem to be considered as turrets aswell
+Note: there seems to be some kind of a header on turret segments, however, this is not present for first turret, so I skipped it for time being
+
+## Entity ID
+offset: 0x00; length: 0x04;
+```
+XX 00 00 40               //increments for each turret, goes from 01 to 18
+```
+
+## Constant byte
+offset: 0x04; length: 0x01;
+```
+40                        //seems to be constantly 40
+```
+
+## Name string
+offset: 0x05; length: 0x1C;
+```
+54 75 72 72  65 74 5F 43    // Turret_ChaosTurretShrine_A
+68 61 6F 73  54 75 72 72    // This one probably refers to fountain laser
+65 74 53 68  72 69 6E 65    
+5F 41 00 XX
+```
+
+## Unknown data
+offset: 0x21; length: 0x24;
+```
+XX XX 00 00  00 00 XX XX    
+XX 00 00 00  5D 02 D5 71    
+C3 01 XX XX  34 02 FE FF    
+FF FF 8C E3  BE 77 XX XX
+04 77 F8 90     
+```
+
+## Interesting bytes
+offset: 0x45; length: 0x05;
+```
+!! 00 00 !!  !!             //first marker is either 00 for FLs or 02 for turrets
+                            //second marker is either 80 for FLs or 00 for turrets
+                            //third marker is either 01 or 02, possibly refers to 
+                            //whether or not the turret can be attacked
+```
+
+## Items
+offset: 0x4A; length: 0x46;
+### Header
+offset: 0x4A; length: 0x07;
+```
+B3 00 65 FE  00 0C 01       //the same as players' items' header
+```
+
+### Item entries
+offset: 0x51; length: 0x3F;
+```
+DC 05 00 00  00 01 00       // On all towers
+DE 05 00 00  01 01 00       // On all towers
+DF 05 00 00  02 01 00       // On all towers
+DD 05 00 00  03 01 00       // On some towers
+00 00 00 00  04 00 00       
+00 00 00 00  05 00 00
+00 00 00 00  06 00 00 
+00 00 00 00  07 00 00
+00 00 00 00  08 00 00 
+```
+
+## Padding
+offset: 0x90; length: 0x24;
+```
+00 00 80 BF  00 00 80 BF    // Constant (padding?)
+00 00 80 BF  00 00 80 BF 
+00 00 80 BF  00 00 80 BF 
+00 00 80 BF  00 00 80 BF
+00 00 80 BF
+```
+
 
