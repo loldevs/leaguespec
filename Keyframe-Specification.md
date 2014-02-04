@@ -20,8 +20,16 @@
      - 9 item entries (0x3F)
      - Unknown data
    - Footer (0x05)
- - Turret Segments
-   - Unknown data
+ - n Turret Segments (one for each turret) (0xB4 each)
+   - Entity ID (0x04)
+   - Constant byte (0x01)
+   - Name string (0x1C)
+   - Unknown data (0x24)
+   - Interesting bytes (0x05)
+   - Items (0x48)
+     - Item header (0x09)
+     - 9 item entries (0x3F)
+   - Padding (0x24)
  - Unknown data
 
 Note: everything is in little endian.
@@ -291,3 +299,7 @@ BF  B3 00 01 EF  00 01 93 00  07 FE 00 00
 ```
 00 00 15 01  EN TI TY ID
 ```
+
+# Turret Segment
+Note: fountain lazers seem to be considered as turrets aswell
+
