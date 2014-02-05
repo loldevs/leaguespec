@@ -335,7 +335,7 @@ offset: 0x05; length: 0x1C;
 ## Unknown data
 offset: 0x21; length: 0x24;
 ```
-XX XX 00 00  00 00 XX XX    
+XX XX 00 00  00 00 XX XX   // second marker seems to always be either 00 00 00 or 60 35 33
 XX 00 00 00  5D 02 D5 71    
 C3 01 XX XX  34 02 FE FF    
 FF FF 8C E3  BE 77 XX XX
