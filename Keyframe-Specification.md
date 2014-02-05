@@ -295,6 +295,7 @@ B3  00 09 84 00  40 E0 85 2E  43 00 00 80
 BF  F3 00 09 00  41 58 B1 85  43 00 00 80
 BF  B3 00 01 EF  00 01 93 00  07 FE 00 00
 ```
+Note: 07 FE 00 00 may signal end of section?
 ## Footer
 ```
 00 00 15 01  EN TI TY ID
