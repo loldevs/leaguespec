@@ -298,13 +298,18 @@ BF  B3 00 01 EF  00 01 93 00  07 FE 00 00
 Note: 07 FE 00 00 may signal end of section?
 ## Footer
 ```
-00 00 15 01  EN TI TY ID
+00 00 15 01  EN TI TY ID  00
 ```
 
 # Turret Segment
 Note: fountain lasers seem to be considered as turrets aswell
 
-Note: there seems to be some kind of a header on turret segments, however, this is not present for first turret, so I skipped it for time being
+## Header
+Note: header lenght is not included in offsets
+```
+93 00 4A 9C      // First turrent
+B3 00 4A 9C 01   // All other turrets
+```
 
 ## Entity ID
 offset: 0x00; length: 0x04;
