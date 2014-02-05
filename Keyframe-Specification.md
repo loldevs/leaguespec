@@ -272,8 +272,8 @@ Example:
 17 00 01 01
 76 69 77 00 // "viw"
 F3 00 0A 00 2F 01
-76 69 72 64 75 6E 6B 00 F3 00 // "virdunk"
-17 00 32 01
+76 69 72 64 75 6E 6B 00 // "virdunk"
+F3 00 17 00 32 01
 69 74 65 6D 70 6C 61 63 65 6D 65 6E 74 6D 69 73 73 69 6C 65 00 // "itemplacementmissile"
 ```
 ### Unknown data
@@ -302,6 +302,7 @@ BF  B3 00 01 EF  00 01 93 00  07 FE 00 00
 
 # Turret Segment
 Note: fountain lasers seem to be considered as turrets aswell
+
 Note: there seems to be some kind of a header on turret segments, however, this is not present for first turret, so I skipped it for time being
 
 ## Entity ID
