@@ -35,7 +35,7 @@
 Note: everything is in little endian.
 # KeyFrame Header
 ```
-03 XX XX XX             
+03 XX XX XX     // Timestamp, in seconds, as float        
 XX 02 00 00
 00 61 00 00
 00 00 00 00
