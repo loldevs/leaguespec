@@ -76,7 +76,7 @@ Return some information about the last avaiable chunk:
 * **duration**: Number of ms this chunks information represents
 
 #### endOfGameStats(platformId, gameId) > base64 encoded AMF Data
-URL: **.../consumer/getLastChunkInfo/&lt;platformId&gt;/&lt;gameID&gt;/null** (!)
+URL: **.../consumer/endOfGameStats/&lt;platformId&gt;/&lt;gameID&gt;/null** (!)
 
 Contains data used for the statistics screen after a game.
 
