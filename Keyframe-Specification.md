@@ -3,8 +3,8 @@
  - n Player Segments (one for each player)
    - Header (0x17)
    - Summoner name (0x10)
-   - Unknown data (0x6C)
-   - Champion name (0x??)
+   - Unknown data (0x70)
+   - Champion name (0x10)
    - Unknown data (0x??)
    - Rune Page (0x78)
      - Marks (0x24)
@@ -78,7 +78,7 @@ Example:
 57 61 72 4C  6F 72 44 20  54 69 74 61  6E 00 DC 34  // "WarLorD Titan"
 ```
 ## Unknown data
-offset: 0x27; length: 0x6C
+offset: 0x27; length: 0x70
 ```
 XX XX XX XX  XX XX XX XX  XX 00 00 00  00 00 00 XX
 XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX XX XX
