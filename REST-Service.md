@@ -24,7 +24,7 @@ The same procedure is known to work in many video and audio formats. It provides
 
 ## Cryptography
 
-Chunks and Keyframes are encrypted and compressed. The algorithm used for cryptography seems to be Blowfish in ECB mode. Compression is done using zip BEFORE the encryption. So to read a chunks data one needs to first decrypt then uncompress the data.
+Chunks and Keyframes are encrypted and compressed. The algorithm used for cryptography seems to be Blowfish in ECB mode. The decryption key is the observerEncryptionKey decrypted in Blowfish ECB using the gameId in ASCII as a key. Compression is done using gzip BEFORE the encryption. So to read a chunks data one needs to first decrypt then decompress the data.
 
 ## API Docs
 
