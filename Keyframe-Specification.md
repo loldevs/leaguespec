@@ -56,7 +56,7 @@ XX FF XX 00
 ## Summoner Name
 bytes after the null are meaningless
 
-offset: 0x17; length: 0x10
+offset: 0x17; length: 0xX
 Example:
 ```
 4D 61 61 61  61 61 61 61  61 61 61 61  61 72 72 72  // "Maaaaaaaaaaaarrr" (max length)
@@ -78,7 +78,10 @@ Example:
 57 61 72 4C  6F 72 44 20  54 69 74 61  6E 00 DC 34  // "WarLorD Titan"
 ```
 ## Unknown data
-offset: 0x27; length: 0x70
+
+This data might be part of the summoner name since is seems to be random across keyframes but the same for every summoner in a single keyframe. 
+
+offset: 0x17+X; length: 0x80-X
 ```
 XX XX XX XX  XX XX XX XX  XX 00 00 00  00 00 00 XX
 XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX XX XX
