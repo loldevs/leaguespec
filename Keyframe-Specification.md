@@ -3,7 +3,7 @@
  - n Player Segments (one for each player)
    - Header (0x17)
    - Summoner name (0x10)
-   - Unknown data (0x70)
+   - Unknown data (0x70)  // this might be part of the Summoner name (making it 0x80 in total)
    - Champion name (0x10)
    - Unknown data (0x??)
    - Rune Page (0x78)
