@@ -77,6 +77,10 @@ Example:
 ```
 57 61 72 4C  6F 72 44 20  54 69 74 61  6E 00 DC 34  // "WarLorD Titan"
 ```
+Example: 
+```
+ED 91 B8 EB A7 8C EB 91 90 EB 8A 94 EB 91 B8 EA B7 EC ED 91 B8 EA B7 BC  //  "푸만두는푸근푸근"
+```
 ## Unknown data
 
 This data might be part of the summoner name since is seems to be random across keyframes but the same for every summoner in a single keyframe. 
