@@ -421,7 +421,8 @@ offset: 0x4A; length: 0x46;
 ### Header
 offset: 0x4A; length: 0x07;
 ```
-B3 00 65 FE  00 0C 01       //the same as players' items' header
+B3 !! 65 FE  00 0C 01       //the same as players' items' header
+                            // marker is 0x00 most of the time, 0x01 sometimes. 
 ```
 
 ### Item entries
