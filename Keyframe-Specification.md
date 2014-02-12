@@ -111,7 +111,7 @@ XX XX XX XX  !! 83 !! 12        // first flag: 0 or 2; second: 0 or 1
 02 00 00 29  EN TI TY ID
 ```
 ## Rune Page
-offset: 0xE3; length: 0x78
+offset: 0xD3; length: 0x78
 ### Marks
 Example:
 ```
