@@ -169,10 +169,21 @@ A8 6E 49 06             // header?
 
 ```
 XX                      // the mastery id; does not correlate with AIR Client talentId
-XX                      // the tree; 74 = offensive, 75 = defensive, 76 = utility (note: double check)
+XX                      // the tree; 74 = offensive, 75 = defensive, 76 = utility 
 03 00                   // unknown
 XX                      // number of points in mastery (max 4)
 ```
+The first byte contains the **coordinates** of the mastery in its tree.
+The first 4 bits contain the row (starting at 4), the last 4 bits contain the column (starting at 1). 
+As mentioned above, the second byte represents the tree (74 = offensive, 75 = defensive, 76 = utility). 
+
+Example: 
+```
+53 74 03 00 01   // Offensive tree, second row, third column => Mental Force (4123), 1 point spend. 
+```
+To get the masteryId from this entry one can use this formula: 
+> (4100 + (secondByte - 0x74) * 0x64 + ((firstByte >> 4) - 0x03) * 0x0A + (firstByte & 0x0F)
+
 ### Padding
 ```
 00 00 00 00 ...
