@@ -193,7 +193,7 @@ Note: not even sure this is what this actually is
 ### Header
 Second byte changes.
 
-offset: 0x2F2, length: 0x09
+offset: 0x2E3, length: 0x09
 ```
 1E XX B3 00 65 FE 00 0C 01
 ```
