@@ -8,7 +8,7 @@
     - **9** [Marks](#)
     - **9** [Seals](#)
     - **9** [Glyphs](#)
-    - **9** [Quints](#)
+    - **3** [Quints](#)
   - [Masteries](#)
     - [Header](#)
     - **n** [Mastery entries](#)
@@ -29,8 +29,9 @@
 - Offsets are relative to their parent sections/segments
 
 # Header
-- offset: **0x00**
-- length: **0x17**
+- **offset:** ``0x00``
+- **length:** ``0x17``
+
 ```
 B3
 !! C3 4B 00                 // Marker #1
@@ -40,18 +41,22 @@ B3
 XX FF XX 00
 00 00
 ```
-- **Marker #1** can only be 0x00 or 0x01, could possibly refer to whether the player is dead or not
+
+- **Marker #1** can only be ``0x00`` or ``0x01``, could possibly refer to whether the player is dead or not
 - **Entity ID** is incremented in the order which players are in the file
-- **Entity ID** is usually increased by 1 for each player, however, some IDs may be skipped
-- **Player number** is a unique number assigned to each player, ranging from 0x00 to 0x09 for a 5v5 game
+- **Entity ID** is usually increased by **1** for each player, however, some IDs may be skipped
+- **Player number** is a unique number assigned to each player, ranging from ``0x00`` to ``0x09`` for a 5v5 game
 - Ordering of **player number** is unknown
 
 # Summoner Name
-- offset: **0x17**
-- length: **0x80**
+
+- **offset:** ``0x17``
+- **length:** ``0x80``
+
 **Example:**
+
 ```
-53 68 61 65  76 00 20 0F  43 00 00 00  00 00 00 00  //Shaev
+53 68 61 65  76 00 20 0F  43 00 00 00  00 00 00 00  // Shaev
 00 00 00 00  00 02 00 00  00 00 00 00  00 00 00 4F  
 00 78 50 08  08 00 00 00  00 00 00 00  00 64 03 3D  
 08 69 43 82  84 00 00 00  00 00 00 00  00 02 00 00  
@@ -60,19 +65,25 @@ XX FF XX 00
 00 70 50 08  08 E0 D0 2A  00 DD 14 EA  74 00 00 4F
 00 00 00 00  00 78 50 08  08 F4 D0 2A  00 C2 DC B7
 ```
-- bytes after first 0x00 byte are meaningless
+
+- bytes after first ``0x00`` byte are meaningless
 
 # Champion Name
-- offset: **0x97**
-- length: **0x10**
+
+- **offset:** ``0x97``
+- **length:** ``0x10``
+
 ```
-4C 65 62 6C  61 6E 63 00  00 78 50 08  08 08 D1 2A  //Leblanc
+4C 65 62 6C  61 6E 63 00  00 78 50 08  08 08 D1 2A  // Leblanc
 ```
-- bytes after first 0x00 byte are meaningless
+
+- bytes after first ``0x00`` byte are meaningless
 
 # Unknown data
-- offset: **0xA7**
-- length: **0x2C**
+
+- **offset:** ``0xA7``
+- **length:** ``0x2C``
+
 ```
 00 A6 94 XX
 !! XX XX XX  XX XX XX XX        // Marker #1
@@ -81,15 +92,20 @@ XX XX XX XX  XX XX XX XX
 XX XX XX XX  !! 83 !! 12        // Marker #2; Marker #3
 02 00 00 29  ++ ++ ++ 40        // Entity ID
 ```
-- **Marker #1** can only be 0x00 or 0x01
-- **Marker #2** can only be 0x00 or ox02
-- **Marker #3** can only be 0x00 or 0x01
+
+- **Marker #1** can only be ``0x00`` or ``0x01``
+- **Marker #2** can only be ``0x00`` or ``0x02``
+- **Marker #3** can only be ``0x00`` or ``0x01``
 
 # Rune Page
-- offset: **0xD3**
-- length: **0x78**
+
+- **offset:** ``0xD3``
+- **length:** ``0x78``
+
 ## Marks
+
 **Example:**
+
 ```
 83 14 00 00
 85 14 00 00
@@ -101,8 +117,11 @@ XX XX XX XX  !! 83 !! 12        // Marker #2; Marker #3
 85 14 00 00
 85 14 00 00
 ```
+
 ## Seals
+
 **Example:**
+
 ```
 A9 14 00 00
 A9 14 00 00
@@ -114,8 +133,11 @@ A9 14 00 00
 A9 14 00 00
 A9 14 00 00
 ```
+
 ## Glyphs
+
 **Example:**
+
 ```
 C9 14 00 00
 C9 14 00 00
@@ -127,8 +149,11 @@ C9 14 00 00
 C9 14 00 00
 C9 14 00 00
 ```
+
 ## Quints
+
 **Example:**
+
 ```
 D7 14 00 00
 24 15 00 00
@@ -136,82 +161,105 @@ D7 14 00 00
 ```
 
 # Mastery Page
-- offset: **0x14B**
-- length: **0x194**
+
+- **offset:** ``0x14B``
+- **length:** ``0x194``
+
 ## Header
-- offset: **0x00**
-- length: **0x08**
+
+- **offset:** ``0x00``
+- **length:** ``0x08``
+
 ``` 
 24 4F 36 06
 A8 6E 49 06
 ```
+
 ## Mastery Entry
-- offset: **0x08**
-- length: **0x05**
+
+- **offset:** ``0x08``
+- **length:** ``0x05``
+
 ```
 !!                      // Mastery ID
 !!                      // Mastery tree
 03 00
 !!                      // Points spent
 ```
+
 - **Mastery ID** does not correlate with **talentId** in AIR Client
 - **Mastery ID** contains the **coordinates** of the mastery in its tree.
-  - First 4 bits contain the row (starting at 0x04)
-  - Last 4 bits contain the column (starting at 0x01)
+  - First 4 bits contain the row (starting at ``0x04``)
+  - Last 4 bits contain the column (starting at ``0x01``)
 - **Mastery tree**
-  - 0x74 = Offense
-  - 0x75 = Defense
-  - 0x76 = Utility
-- **Points spent** referse to the number of points in specific mastery, with a maximum of 0x04
+  - ``0x74`` = Offense
+  - ``0x75`` = Defense
+  - ``0x76`` = Utility
+- **Points spent** referse to the number of points in specific mastery, with a maximum of ``0x04``
 
 **Example: **
+
 ```
 53 74 03 00 01
 ```
+
 - Offensive tree
 - Second row, third column => Mental Force (4123)
 - 1 point spent
 
 **Note:**
-To get the masteryId from this entry one can use this formula: 
-> (4100 + (secondByte - 0x74) * 0x64 + ((firstByte >> 4) - 0x03) * 0x0A + (firstByte & 0x0F)
+To get the **talentId** from this entry, one can use this formula: 
+``(4100 + (secondByte - 0x74) * 0x64 + ((firstByte >> 4) - 0x03) * 0x0A + (firstByte & 0x0F)``
 
 ## Padding
+
 ```
 00 00 00 00 ...
 ```
+
 # Items 
-- offset: **0x2E3**
-- length: **N/A**
+
+- **offset:** ``0x2E3``
+- **length:** ``N/A``
+
 ## Header
-- offset: 
-- length: **0x09**
+
+- **offset:** ``0x00``
+- **length:** ``0x09``
+
 ```
 1E XX B3 00 65 FE 00 0C 01
 ```
 
 ## Item Entries
-- offset: **0x09 + n * 0x07**
-- length: **0x07**
+
+- **offset:** ``0x09``
+- **length:** ``0x07``
+
 ```
 ++ ++ 00 00             // Item ID
 !!                      // Index (slot)
 !!                      // Quantity
 !!                      // Charges
 ```
+
 - There are **9** item entries
-- **Index** refers to the slot in which the item is placed, ranging from 0x00 to 0x08
+- **Index** refers to the slot in which the item is placed, ranging from ``0x00`` to ``0x08``
 - 8th and 9th item entries are always the same
 
 **8th:**
+
 ```
 D1 07 00 00             
 07
 01
 00
 ```
+
 - This **item ID** does not map to any item
+
 **9th:**
+
 ```
 00 00 00 00
 08
@@ -220,9 +268,12 @@ D1 07 00 00
 ```
 
 ## Unknown data (padding?)
-- offset: **N/A**
-- length: **N/A**
-Example:
+
+- **offset:** ``N/A``
+- **length:** ``N/A``
+
+**Example:**
+
 ```
 00 00 80 BF  
 00 0E 8E 40 
@@ -234,14 +285,17 @@ Example:
 00 00 80 BF
 00 00 80 BF
 ```
+
 - Default value of each row is ``00 00 80 BF`` (-1.0)
   - Value of 2nd row can sometimes be ``00 0E 8E 40`` (4.439209)
 
 # Unknown data
-- offset: **N/A**
-- length: **0x130**
+
+- **offset:** ``N/A``
+- **length:** ``0x130``
 
 Example:
+
 ```
 A3 00 28 01
 00 00 45 00 
@@ -309,18 +363,24 @@ AD 6A BA 44  // 1491.333618
 ```
 
 # Abilities
-- offset: **N/A**
-- length: **N/A**
+
+- **offset:** ``N/A``
+- **length:** ``N/A``
+
 ## Header
-- offset: **0x00**
-- length: **0x04**
+
+- **offset:** ``0x00``
+- **length:** ``0x04``
+
 ```
 B3 00 03 15
 ```
+
 ## Ability entry
-- offset: **0x04**
-- length: **0x07**
-XX = points in ability (0 to 5)
+
+- **offset:** ``0x04``
+- **length:** ``0x07``
+
 ```
 00  
 !!  //Ability number
@@ -330,23 +390,28 @@ XX = points in ability (0 to 5)
 00 
 !!  //Marker #2
 ```
-- **Ability number** refers to ability number, ranging from 0x00 to 0x03
+
+- **Ability number** refers to ability number, ranging from ``0x00`` to ``0x03``
 - **Ability level** refers to ability level
-- **Marker #1** is always 0xF3, except for the last ability, where it is 0xB3
+- **Marker #1** is always ``0xF3``, except for the last ability, where it is ``0xB3``
 - **Marker #2** is the same for each one, except for the last one
 
 **Example:**
+
 ```
 00 00 00 01  F3 00 03
 00 01 00 01  F3 00 03
 00 02 00 01  F3 00 03
 00 03 00 01  B3 00 15
 ```
+
 # String data
-- offset: **N/A**
-- length: **variable**
+
+- **offset:** ``N/A``
+- **length:** ``variable``
 
 **Example:** 
+
 ```
 17 00 2C 01
 6C 75 63 69 61 6E 72 6D 69 73 73 69 6C 65 00 // "lucianrmissile"
@@ -355,7 +420,9 @@ F3 00 1E 00 32 01
 F3 00 10 00 33 01
 6C 75 63 69 61 6E 71 64 61 6D 61 67 65 00
 ```
+
 **Example:**
+
 ```
 17 00 01 01
 76 69 77 00 // "viw"
@@ -364,13 +431,16 @@ F3 00 0A 00 2F 01
 F3 00 17 00 32 01
 69 74 65 6D 70 6C 61 63 65 6D 65 6E 74 6D 69 73 73 69 6C 65 00 // "itemplacementmissile"
 ```
+
 - There is no known use for these strings
 
 # Unknown data
-- offset: **N/A**
-- length: **variable**
+
+- **offset:** ``N/A``
+- **length:** ``variable``
 
 **Example:**
+
 ```
 B3 00  09 84 00 40  00 FE 4C 40  00 00 80
 BF F3  00 09 00 43  C0 DD C5 41  00 00 80
@@ -380,15 +450,23 @@ BF F3  00 09 00 40  D0 CE B8 42  00 00 80
 BF F3  00 09 00 41  80 BB 1F 42  00 00 80
 BF B3  00 01 EF 00  01 93 00 07  FE 00 00
 ```
+
 **Example:**
+
 ```
 B3 00  09 84 00 40  E0 85 2E 43  00 00 80
 BF F3  00 09 00 41  58 B1 85 43  00 00 80
 BF B3  00 01 EF 00  01 93 00 07  FE 00 00
 ```
+
 - Many of these seem to be floats
 - ``07 FE 00 00`` may signal end of section
+
 # Footer
+
+- **offset:** ``N/A``
+- **length:** ``0x09``
+
 ```
 00 00 15 01  
 ++ ++ ++ 40  //Entity ID
