@@ -1,24 +1,25 @@
 # General Structure
- - Header (0x10 bytes)
- - n Player Segments (one for each player)
+ - [Header](#wiki-keyframe-header) (0x10 bytes)
+ - n [Player Segments](#wiki-player-segment) (one for each player)
    - [Header](#wiki-header) (0x17)
    - [Summoner name](#wiki-summoner-name) (0x10)
-   - Unknown data (0x70)  // this might be part of the Summoner name (making it 0x80 in total)
+   - [Unknown data](#wiki-unknown-data) (0x70)  // this might be part of the Summoner name (making it 0x80 in total)
    - [Champion name](#wiki-champion-name) (0x10)
-   - Unknown data (0x??)
+   - [Unknown data](#wiki-unknown-data-1) (0x??)
    - [Rune Page](#wiki-rune-page) (0x78)
-     - Marks (0x24)
-     - Seals (0x24)
-     - Glyphs (0x24)
-     - Quints (0x0C)
+     - [Marks](#wiki-marks) (0x24)
+     - [Seals](#wiki-seals) (0x24)
+     - [Glyphs](#wiki-glyphs) (0x24)
+     - [Quints](#wiki-quints) (0x0C)
    - [Mastery Page](#wiki-mastery-page) (0x??)
-     - Header (0x04)
-     - n Entries (one for each mastery, points in the same mastery do not count as a new entry)
-     - Padding
+     - [Header](#wiki-header-1) (0x04)
+     - n [Entries](#wiki-mastery-entry) (one for each mastery, points in the same mastery do not count as a new entry)
+     - [Padding](#wiki-padding)
    - [Entity State Data](#wiki-entity-state) (?)
-     - Header (0x09)
-     - 9 item entries (0x3F)
-     - Unknown data
+     - [Header](#wiki-header-2) (0x09)
+     - 9 [item entries](#wiki-item-entries) (0x3F)
+     - [Unknown data](#wiki-unknown-data-2)
+     - [More unknown data](#wiki-unknown-data-3)
    - Footer (0x05)
  - n Turret Segments (one for each turret) (0xB4 each)
    - Entity ID (0x04)
@@ -315,6 +316,7 @@ AD 6A BA 44 // 1491.333618
 
 00 00
 ```
+# Abilities
 ### Some kind of marker
 ```
 B3 00 03 15
