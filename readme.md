@@ -1,9 +1,9 @@
 # leaguespec
 
-This is a repository for collecting information and tools around the League
-of Legends Spectator system.
+This is a repository for collecting information and tools around the internals of League
+of Legends.
 
-See this as a community crafted knowledge base around Riot Games observer system.
+See this as a community crafted knowledge base around Riot Games's League of Legends.
 
 The result can be found in [the wiki](https://github.com/loldevs/leaguespec/wiki) for this project.
 
