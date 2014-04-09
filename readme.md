@@ -13,7 +13,7 @@ The results and specification found here are released under the terms of the Cre
 
 # Communication
 
-Most of the communication happens either in [issues](https://github.com/loldevs/leaguespec/issues) or in IRC (freenode.com ##loldevs). If you want to participate, just come around. We are mostly friendly and don't bite often.
+Most of the communication happens either in [issues](https://github.com/loldevs/leaguespec/issues) or in IRC (freenode.com ##loldev). If you want to participate, just come around. We are mostly friendly and don't bite often.
 
 # Legal stuff
 
